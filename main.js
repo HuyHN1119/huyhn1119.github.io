@@ -94,41 +94,58 @@ function handleTabKeys(event) {
   selectTab(tabs[target], true);
 }
 
-function showProjectsSection() {
-  const section = document.getElementById("projects");
-  if (section) section.scrollIntoView();
+function isTabbarStuck() {
+  const tabbar = document.querySelector(".tabbar");
+  return tabbar !== null && tabbar.getBoundingClientRect().top <= 1;
 }
 
-function openTab(panelId) {
-  const tab = findTabFor(panelId);
-  if (!tab) return false;
-  selectTab(tab, false);
-  showProjectsSection();
+function scrollToPanels() {
+  const panels = document.getElementById("panels");
+  if (panels) panels.scrollIntoView();
+}
+
+// Open whatever the id points at: a whole panel, or a card inside a panel.
+function openTarget(targetId) {
+  const target = document.getElementById(targetId);
+  if (!target) return false;
+
+  const panel = target.closest('[role="tabpanel"]');
+  if (!panel) return false;
+
+  selectTab(findTabFor(panel.id), false);
+  if (target === panel) {
+    scrollToPanels();
+  } else {
+    target.scrollIntoView();
+  }
   return true;
 }
 
 function setupTabs() {
   document.querySelectorAll('[role="tablist"]').forEach((tablist) => {
     tablist.querySelectorAll('[role="tab"]').forEach((tab) => {
-      tab.addEventListener("click", () => selectTab(tab, false));
+      tab.addEventListener("click", () => {
+        selectTab(tab, false);
+        if (isTabbarStuck()) scrollToPanels();
+      });
     });
     tablist.addEventListener("keydown", handleTabKeys);
   });
 }
 
-function setupTabLinks() {
-  document.querySelectorAll("[data-open-tab]").forEach((link) => {
+function setupTargetLinks() {
+  document.querySelectorAll("[data-open]").forEach((link) => {
     link.addEventListener("click", (event) => {
-      if (openTab(link.dataset.openTab)) {
+      if (openTarget(link.dataset.open)) {
         event.preventDefault();
       }
     });
   });
 }
 
-function openTabFromHash() {
-  const panelId = window.location.hash.slice(1);
-  if (panelId) openTab(panelId);
+function openTargetFromHash() {
+  const targetId = window.location.hash.slice(1);
+  if (targetId) openTarget(targetId);
 }
 
 /* ---------- Copy email ---------- */
@@ -170,7 +187,7 @@ function setupCopyButtons() {
 applyLanguage(startingLanguage());
 setupLanguageToggle();
 setupTabs();
-setupTabLinks();
+setupTargetLinks();
 setupCopyButtons();
-openTabFromHash();
-window.addEventListener("hashchange", openTabFromHash);
+openTargetFromHash();
+window.addEventListener("hashchange", openTargetFromHash);
