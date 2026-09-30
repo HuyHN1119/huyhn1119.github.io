@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="vi" data-lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>IBP &amp; ML Forecasting · Hà Nam Huy</title>
+<meta name="description" content="Case: chuẩn hoá chu trình IBP 5 bước và dự báo nhu cầu bằng ML tại TORANO. Deadstock −7 tỷ, SLOB 15% → <5%.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700&family=Inter:wght@400;500;600&family=Roboto+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="./">Hà Nam Huy</a>
+    <nav class="nav" aria-label="Chính">
+      <a href="./#beliefs"><span class="vi">Nguyên tắc</span><span class="en">Principles</span></a>
+      <a href="./#method"><span class="vi">Cách làm việc</span><span class="en">How I work</span></a>
+      <a href="./#projects"><span class="vi">Dự án</span><span class="en">Work</span></a>
+      <a href="./#contact"><span class="vi">Liên hệ</span><span class="en">Contact</span></a>
+    </nav>
+    <div class="lang-toggle" role="group" aria-label="Ngôn ngữ / Language">
+      <button type="button" id="lang-vi" data-set-lang="vi" aria-pressed="true">VI</button>
+      <button type="button" id="lang-en" data-set-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="case-hero">
+    <div class="wrap">
+      <a class="back" href="./#torano"><span class="vi">← Dự án tại TORANO</span><span class="en">← Work at TORANO</span></a>
+      <span class="label"><span class="vi">Case 1 · Chiến lược và hệ thống · TORANO · 02/2025 – nay</span><span class="en">Case 1 · Strategy &amp; systems · TORANO · 02/2025 – present</span></span>
+      <h1><span class="vi">Chuẩn hoá chu trình IBP 5 bước và dự báo nhu cầu bằng ML</span><span class="en">Standardizing a 5-step IBP cycle with ML demand forecasting</span></h1>
+      <p class="lead"><span class="vi">Deadstock giảm 7 tỷ, SLOB từ 15% xuống dưới 5%.</span><span class="en">Deadstock down VND 7B; SLOB from 15% to under 5%.</span></p>
+
+      <ul class="kpi-grid">
+        <li class="kpi">
+          <span class="k-label">Deadstock</span>
+          <span class="k-value"><span class="vi">−7 tỷ</span><span class="en">−VND 7B</span></span>
+          <span class="k-note"><span class="vi">Phân tích toàn bộ chuỗi vận hành</span><span class="en">Analysis across the full operating chain</span></span>
+        </li>
+        <li class="kpi">
+          <span class="k-label">SLOB</span>
+          <span class="k-value"><span class="k-before">15%</span><span class="k-arrow">→</span>&lt;5%</span>
+          <span class="k-note"><span class="vi">Phân tích toàn bộ chuỗi vận hành</span><span class="en">Analysis across the full operating chain</span></span>
+        </li>
+        <li class="kpi">
+          <span class="k-label"><span class="vi">Tồn kho</span><span class="en">Inventory</span></span>
+          <span class="k-value">−20%</span>
+          <span class="k-note"><span class="vi">Postponement, theo dõi tới style/color/size</span><span class="en">Postponement, tracking to style/color/size</span></span>
+        </li>
+        <li class="kpi">
+          <span class="k-label">Leadtime</span>
+          <span class="k-value">−50%</span>
+          <span class="k-note"><span class="vi">Một số mã key trong mùa, nhờ Postponement</span><span class="en">Selected key SKUs in season, via postponement</span></span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="case-body">
+      <section class="case-section">
+        <h2 class="label"><span class="vi">Bối cảnh</span><span class="en">Context</span></h2>
+        <div class="content">
+          <p class="vi">TORANO là Top 2 thời trang nam TMĐT và Top 100 toàn sàn TMĐT, doanh thu 500+ tỷ, ngân sách sản xuất 200+ tỷ. Tôi quản lý Khối Kế hoạch &amp; Cung ứng, 29 người, báo cáo trực tiếp CEO.</p>
+          <p class="en">TORANO ranks Top 2 in men's fashion e-commerce and Top 100 across all e-commerce, with VND 500B+ revenue and a VND 200B+ production budget. I lead the Planning &amp; Supply division: 29 people, reporting to the CEO.</p>
+          <p class="vi">Khi tôi nhận vị trí, bộ phận kế hoạch chưa có quy trình chuẩn và hệ thống vận hành trên Base. Sản xuất, Kinh doanh và Tồn kho cần một chu trình kế hoạch chung.</p>
+          <p class="en">When I joined, the planning team had no standard process and ran on Base. Production, sales and inventory needed one shared planning cycle.</p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2 class="label"><span class="vi">Tôi đã làm</span><span class="en">What I did</span></h2>
+        <div class="content">
+          <ol class="did vi">
+            <li>Xây mới toàn bộ quy trình bộ phận kế hoạch; cập nhật quy trình phối hợp với Sản xuất, Kho vận, Kinh doanh, Kế toán.</li>
+            <li>Thiết lập và vận hành chu trình S&amp;OP toàn công ty theo 5 bước IBP của Oliver Wight.</li>
+            <li>Xây pipeline dữ liệu API – ELT – Report/BI: chân dung khách hàng (RFM, cohort), phân khúc giá và sản phẩm, Retention, CLV, AOV, ASP, UPT; phân tích thị trường theo sàn, danh mục, đối thủ.</li>
+            <li>Dùng AI để code các model ML dự báo nhu cầu, đưa vào Demand Review.</li>
+            <li>Theo dõi biến động tới từng style/color/size (SKU) và áp dụng Postponement.</li>
+            <li>Xây OKRs; chuyển hệ thống từ Base sang Lark Suite và Meegle.</li>
+          </ol>
+          <ol class="did en">
+            <li>Built the planning team's processes from scratch and updated hand-offs with production, warehousing, sales and accounting.</li>
+            <li>Set up and ran a company-wide S&amp;OP cycle on Oliver Wight's 5-step IBP.</li>
+            <li>Built an API – ELT – Report/BI data pipeline: customer profiles (RFM, cohort), price and product segments, retention, CLV, AOV, ASP, UPT; market analysis by marketplace, category and competitor.</li>
+            <li>Used AI to code ML demand-forecasting models that feed the Demand Review.</li>
+            <li>Tracked movement down to style/color/size (SKU) and applied postponement.</li>
+            <li>Set up OKRs and moved the company from Base to Lark Suite and Meegle.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="case-section is-wide">
+        <h2 class="label"><span class="vi">Sơ đồ</span><span class="en">Diagram</span></h2>
+        <div class="content">
+          <p class="diagram-title"><span class="vi">Chu trình IBP hằng tháng và nơi mỗi phần việc đi vào</span><span class="en">The monthly IBP cycle and where each piece of work plugs in</span></p>
+          <ol class="flow" style="--steps:5">
+            <li class="flow-step">
+              <span class="step-no"><span class="vi">Bước 1</span><span class="en">Step 1</span></span>
+              <b>Product Review</b>
+              <p><span class="vi">Cơ cấu danh mục, dòng hàng, phân khúc sản phẩm.</span><span class="en">Category, product line and segment structure.</span></p>
+              <div class="inputs"><span class="in-chip">Assortment</span></div>
+            </li>
+            <li class="flow-step is-key">
+              <span class="step-no"><span class="vi">Bước 2</span><span class="en">Step 2</span></span>
+              <b>Demand Review</b>
+              <p><span class="vi">Thống nhất một con số dự báo nhu cầu.</span><span class="en">Agree one demand forecast.</span></p>
+              <div class="inputs"><span class="in-chip"><span class="vi">Pipeline dữ liệu</span><span class="en">Data pipeline</span></span><span class="in-chip"><span class="vi">Model ML</span><span class="en">ML model</span></span></div>
+            </li>
+            <li class="flow-step">
+              <span class="step-no"><span class="vi">Bước 3</span><span class="en">Step 3</span></span>
+              <b>Supply Review</b>
+              <p><span class="vi">Cân đối sản xuất và tồn kho với nhu cầu.</span><span class="en">Balance production and stock against demand.</span></p>
+              <div class="inputs"><span class="in-chip">Postponement</span><span class="in-chip">style/color/size</span></div>
+            </li>
+            <li class="flow-step">
+              <span class="step-no"><span class="vi">Bước 4</span><span class="en">Step 4</span></span>
+              <b>Financial Review</b>
+              <p><span class="vi">Quy kế hoạch ra ngân sách sản xuất và giá trị tồn kho.</span><span class="en">Turn the plan into production budget and stock value.</span></p>
+              <div class="inputs"><span class="in-chip">SLOB</span><span class="in-chip">Deadstock</span></div>
+            </li>
+            <li class="flow-step">
+              <span class="step-no"><span class="vi">Bước 5</span><span class="en">Step 5</span></span>
+              <b>Management Business Review</b>
+              <p><span class="vi">Trình CEO chốt kế hoạch và các quyết định lệch.</span><span class="en">CEO signs off the plan and the gap decisions.</span></p>
+              <div class="inputs"><span class="in-chip">CEO</span></div>
+            </li>
+          </ol>
+          <p class="diagram-note"><span class="vi">Lặp lại mỗi tháng. Sơ đồ minh hoạ phương pháp, không chứa dữ liệu nội bộ.</span><span class="en">Repeats every month. The diagram shows the method and holds no internal data.</span></p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2 class="label"><span class="vi">Bài học</span><span class="en">Lesson</span></h2>
+        <div class="content">
+          <p class="lesson vi">Chuẩn hoá quy trình và dữ liệu trước, chạy model sau. Model chạy trên dữ liệu chưa sạch chỉ cho ra sai số nhanh hơn.</p>
+          <p class="lesson en">Standardize the process and the data first, then run the model. A model on unclean data just produces errors faster.</p>
+        </div>
+      </section>
+
+      <nav class="case-nav" aria-label="Case khác">
+        <a class="next" href="case-fulfillment.html">
+          <span class="label"><span class="vi">Case tiếp theo</span><span class="en">Next case</span></span>
+          <b><span class="vi">Thiết kế lại luồng kho vận →</span><span class="en">Redesigning warehouse flow →</span></b>
+        </a>
+      </nav>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Hà Nam Huy</span>
+    <span><span class="vi">Số liệu lấy từ CV</span><span class="en">Figures from my CV</span></span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
