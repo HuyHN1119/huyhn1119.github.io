@@ -252,7 +252,7 @@ a { color: var(--primary); }
 .route-track {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   margin: 22px 0 0;
   padding: 0;
   list-style: none;
@@ -307,7 +307,7 @@ a { color: var(--primary); }
 .parcel {
   position: absolute;
   top: 3px;
-  left: calc(100% * 4 / 6);
+  left: calc(100% * 5 / 7);
   width: 14px;
   height: 14px;
   border-radius: 50%;
@@ -319,7 +319,7 @@ a { color: var(--primary); }
 
 @keyframes travel {
   from { left: 0; }
-  to { left: calc(100% * 4 / 6); }
+  to { left: calc(100% * 5 / 7); }
 }
 
 @media (prefers-reduced-motion: reduce) {
