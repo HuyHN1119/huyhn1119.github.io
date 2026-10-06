@@ -252,13 +252,13 @@ a { color: var(--primary); }
 .route-track {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-template-columns: repeat(9, minmax(0, 1fr));
   margin: 22px 0 0;
   padding: 0;
   list-style: none;
 }
 
-.stop { position: relative; padding: 30px 14px 0 0; min-width: 0; }
+.stop { position: relative; padding: 30px 10px 0 0; min-width: 0; }
 
 .stop .dot {
   position: absolute;
@@ -298,8 +298,8 @@ a { color: var(--primary); }
 .stop a:hover .stop-name { color: var(--primary); }
 
 .stop-date { font-family: var(--font-mono); font-size: 12.5px; color: var(--muted); }
-.stop-name { display: block; margin-top: 2px; font-weight: 600; font-size: 16px; line-height: 1.3; }
-.stop-role { display: block; margin-top: 2px; font-size: 14px; color: var(--muted); line-height: 1.4; }
+.stop-name { display: block; margin-top: 2px; font-weight: 600; font-size: 15px; line-height: 1.3; }
+.stop-role { display: block; margin-top: 2px; font-size: 13px; color: var(--muted); line-height: 1.4; }
 .stop-now { color: var(--accent); font-weight: 600; }
 .stop.is-next .stop-name { color: var(--muted); }
 
@@ -307,7 +307,7 @@ a { color: var(--primary); }
 .parcel {
   position: absolute;
   top: 3px;
-  left: calc(100% * 5 / 7);
+  left: calc(100% * 7 / 9);
   width: 14px;
   height: 14px;
   border-radius: 50%;
@@ -319,7 +319,7 @@ a { color: var(--primary); }
 
 @keyframes travel {
   from { left: 0; }
-  to { left: calc(100% * 5 / 7); }
+  to { left: calc(100% * 7 / 9); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -327,7 +327,7 @@ a { color: var(--primary); }
   .parcel { animation: none; }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 900px) {
   .route-track { grid-template-columns: 1fr; }
   .stop { padding: 0 0 22px 32px; }
   .stop .dot { top: 4px; }
