@@ -121,11 +121,22 @@ function openTarget(targetId) {
   return true;
 }
 
+// Count each tab opened as an event in GoatCounter (does nothing if it is blocked).
+function countTabView(tab) {
+  if (!window.goatcounter || !window.goatcounter.count) return;
+  window.goatcounter.count({
+    path: "tab-" + tab.getAttribute("aria-controls"),
+    title: "Tab: " + tab.textContent.trim(),
+    event: true,
+  });
+}
+
 function setupTabs() {
   document.querySelectorAll('[role="tablist"]').forEach((tablist) => {
     tablist.querySelectorAll('[role="tab"]').forEach((tab) => {
       tab.addEventListener("click", () => {
         selectTab(tab, false);
+        countTabView(tab);
         if (isTabbarStuck()) scrollToPanels();
       });
     });
